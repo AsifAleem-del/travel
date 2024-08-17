@@ -1,0 +1,88 @@
+html {scroll-behavior: smooth;}
+*{margin:0px; padding:0px; outline:0px; box-sizing: border-box;}
+body {font-family: "Roboto", sans-serif; letter-spacing: 1px; font-size: 14px; line-height: 18px;}
+nav {width: 100%; position: fixed; top:0px; padding: 0 24px; z-index: 1; background-color: rgba(0,0,0,.3); border-bottom: solid 1px #888;}
+nav .logo {display:inline-block; padding-top:5px;}
+nav ul {padding: 0px; margin: 0px; list-style: none; float:right; margin-top:6px;}
+nav ul li {display: inline-block;}
+nav ul li a {padding:6px 10px; color: #fff; display: inline-block; border: solid 1px transparent;}
+nav ul li a:hover { border: solid 1px #fff; cursor: pointer; border-radius:2px;}
+nav ul li button {padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left:16px;}
+
+section {width: 100%; height: 100vh;}
+.section-1 { display: none; background-image: url(../img/1.jpeg); background-repeat: no-repeat; background-size: cover; background-color: red;}
+.section-1 p {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, .5); color: white; padding: 20px; border: solid 2px #fff; border-radius: 8px;}
+.section-2 { display: none; background-image: url(../img/2.jpg); background-repeat: no-repeat; background-size: cover; background-color: red;}
+.section-2 p {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, .5); color: white; padding: 20px; border: solid 2px #fff; border-radius: 8px;}
+.section-3 { display: none; background-image: url(../img/3.jpg); background-repeat: no-repeat; background-size: cover; background-color: red;}
+.section-3 p {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, .5); color: white; padding: 20px; border: solid 2px #fff; border-radius: 8px;}
+section {scale:1; opacity: 1; animation: fade-in linear; animation-timeline: view(); animation-range: entry;}
+.mySlides {display: none;}
+
+/* Slideshow container */
+.slideshow-container {max-width: 100%;}
+  /* Caption text */
+  .text {color: #f2f2f2; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;}
+  /* Number text (1/3 etc) */
+  .numbertext {color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
+  /* The dots/bullets/indicators */
+  /* .dot {height: 15px; width: 15px; margin: 0 2px; background-color: #fff; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
+  .dot.active {background-color: #717171;} */
+  
+  /* Fading animation */
+  .fade {animation-name: fade; animation-duration:15.5s;}
+
+.heading-text {padding: 16px 16px 32px 16px; display: flex; justify-content: center;}
+.heading-text h3 {font-size: 32px; font-style: italic; color: #000; position: relative;}
+.heading-text h3::after {content: ''; width:60%; height: 2px; background-color: #000; position:absolute; bottom:-16px; left:50%; transform: translateX(-50%);}
+.section-4 {display: flex; justify-content: center; align-items: center; background-color: #f0f8fb;}
+.container {max-width: 1200px; width: 95%;}
+.slider-wrapper {position:relative;}
+.slider-wrapper .image-list {display: grid; gap: 18px; overflow-x: auto; scrollbar-width: none; margin-bottom: 30px;; grid-template-columns: repeat(10, 1fr);}
+.slider-wrapper .image-list::-webkit-scrollbar {display: none;}
+.slider-wrapper .image-list .image-item {width: 325px; height: 400px; object-fit: cover;}
+.container .slider-scrollbar {height: 24px; width: 100%; display: flex; align-items: center;}
+.slider-scrollbar .scrollbar-track {position:relative; height: 2px; width:100%; background:#ccc; border-radius: 4px;}
+.slider-scrollbar .scrollbar-track:hover {height: 4px;}
+.slider-scrollbar .scrollbar-track:active {cursor:grabbing; height: 8px; top:-2px;}
+.slider-scrollbar .scrollbar-thumb {position:absolute; height: 100%; width:50%; background:#000; border-radius: inherit; cursor: grab;}
+.slider-scrollbar .scrollbar-thumb::after {content: ''; left:0; right: 0; top:-10px; bottom: -10px;}
+.slider-wrapper .slide-button {position:absolute; top:50%; transform: translateY(-50%); height:50px; width:50px; color: #fff; background:#000; font-size: 2.2rem; cursor: pointer; border-radius: 50%; text-align: center;}
+.slider-wrapper .slide-button#prev-slide {left: -20px; display:none;}
+.slider-wrapper .slide-button#next-slide {right: -20px;}
+
+
+/* Reveal Website Elements On Scroll */
+section .cards {display: flex;}
+section .cards .text-card {background:transparent; color:#fff; border: solid 1px #ccc; margin: 16px; padding: 24px; border-radius:4px; text-align: center;}
+section .cards .text-card:hover {background-color: rgba(0, 0, 0, .2); transition: all .5s ease;}
+section .cards .text-card h3 {font-size:14px; padding: 16px;}
+section .cards .text-card .icon-container .icon-design {font-size: 42px !important; padding: 12px; background: #fff; color: #000; border-radius: 4px;}
+.reveal {position:relative; transform: translateY(150px); opacity: 0; transition: all 1s ease;}
+.reveal.active {transform: translateY(0px); opacity:1; background:none;}
+#myBtn {display:none; position:fixed; bottom:20px; right:30px; z-index:99; font-size:18px; border:none; outline:none; background-color:red; color:white; cursor:pointer; padding:15px; border-radius:4px;}
+#myBtn:hover {background-color: #555;}
+#customModal {width: 100%; height:100%; display: none; position:fixed; top:0; left:0; z-index:9; background-color:rgba(0, 0, 0, .7);}
+#customModal .modalContainer {background: #fff; width: 600px; height: 400px; position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; color:#000;}
+.iconToggle {display: none;}
+
+ @keyframes fade {0% {opacity: .0} 25% {opacity: .2} 75% {opacity: .5} 100% {opacity: 1}}
+
+ @media(max-width:900px) {
+
+  nav ul {display: none; width: 100%; text-align: center; padding: 10px; margin-top:0px; background: rgba(0, 0, 0, .8);}
+  nav ul li {display: block;}
+  nav ul li a {width: 100%;}
+  section {height: auto;}
+  section .cards {flex-direction: column;} 
+  .iconToggle {display:inline; float:right; color: #fff; margin-top:8px; cursor: pointer;}
+  .iconToggle .material-symbols-outlined {font-size: 32px; color: #fff;}
+  .iconToggle .material-symbols-outlined.menuIcon {display:inline-block;}
+  .iconToggle .material-symbols-outlined.CloseIcon {display:none;}
+  .iconToggle.active .material-symbols-outlined.menuIcon {display:none;}
+  .iconToggle.active .material-symbols-outlined.CloseIcon {display:inline-block;}
+  .iconToggle.active + ul {display: block; margin-bottom:10px;}
+  .slideshow-container section {min-height: 100vh;}
+  .section-4 .container {width: calc(100% - 40px);}
+  #customModal .modalContainer {width: 90%;}
+}
